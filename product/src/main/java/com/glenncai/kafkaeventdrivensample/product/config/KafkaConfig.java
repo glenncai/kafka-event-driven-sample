@@ -1,27 +1,29 @@
 package com.glenncai.kafkaeventdrivensample.product.config;
 
-import com.glenncai.kafkaeventdrivensample.product.event.ProductCreatedEvent;
+import static com.glenncai.kafkaeventdrivensample.core.constant.KafkaConstant.PRODUCT_CREATED_EVENTS_TOPIC;
+
+import com.glenncai.kafkaeventdrivensample.core.event.ProductCreatedEvent;
 import java.util.HashMap;
 import java.util.Map;
 import org.apache.kafka.clients.admin.NewTopic;
 import org.apache.kafka.clients.producer.ProducerConfig;
+import org.apache.kafka.common.serialization.StringSerializer;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.kafka.config.TopicBuilder;
 import org.springframework.kafka.core.DefaultKafkaProducerFactory;
 import org.springframework.kafka.core.KafkaTemplate;
 import org.springframework.kafka.core.ProducerFactory;
+import org.springframework.kafka.support.serializer.JsonSerializer;
 
 @Configuration
 public class KafkaConfig {
 
-  public static final String PRODUCT_CREATED_EVENTS_TOPIC = "product-created-events-topic";
-
   Map<String, Object> productConfig() {
     Map<String, Object> config = new HashMap<>();
     config.put(ProducerConfig.BOOTSTRAP_SERVERS_CONFIG, "localhost:9092,localhost:9094");
-    config.put(ProducerConfig.KEY_SERIALIZER_CLASS_CONFIG, "org.apache.kafka.common.serialization.StringSerializer");
-    config.put(ProducerConfig.VALUE_SERIALIZER_CLASS_CONFIG, "org.springframework.kafka.support.serializer.JsonSerializer");
+    config.put(ProducerConfig.KEY_SERIALIZER_CLASS_CONFIG, StringSerializer.class);
+    config.put(ProducerConfig.VALUE_SERIALIZER_CLASS_CONFIG, JsonSerializer.class);
     config.put(ProducerConfig.ACKS_CONFIG, "all");
     config.put(ProducerConfig.DELIVERY_TIMEOUT_MS_CONFIG, 120000);
     config.put(ProducerConfig.LINGER_MS_CONFIG, 0);

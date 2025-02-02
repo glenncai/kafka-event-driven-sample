@@ -1,12 +1,14 @@
-package com.glenncai.kafkaeventdrivensample.product.event;
+package com.glenncai.kafkaeventdrivensample.core.event;
 
 import java.time.LocalDateTime;
 import lombok.Builder;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 import lombok.experimental.SuperBuilder;
 
 @Data
 @SuperBuilder
+@NoArgsConstructor
 public class BaseEvent {
 
   @Builder.Default

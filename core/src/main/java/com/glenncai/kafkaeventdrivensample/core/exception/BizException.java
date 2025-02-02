@@ -1,4 +1,4 @@
-package com.glenncai.kafkaeventdrivensample.product.exception;
+package com.glenncai.kafkaeventdrivensample.core.exception;
 
 import lombok.Getter;
 

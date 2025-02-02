@@ -1,4 +1,4 @@
-package com.glenncai.kafkaeventdrivensample.product.exception;
+package com.glenncai.kafkaeventdrivensample.email.exception;
 
 import com.glenncai.kafkaeventdrivensample.core.dto.response.BaseResponse;
 import com.glenncai.kafkaeventdrivensample.core.exception.BizException;

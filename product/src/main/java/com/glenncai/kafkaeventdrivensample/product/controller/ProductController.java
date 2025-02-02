@@ -1,7 +1,7 @@
 package com.glenncai.kafkaeventdrivensample.product.controller;
 
+import com.glenncai.kafkaeventdrivensample.core.dto.response.BaseResponse;
 import com.glenncai.kafkaeventdrivensample.product.dto.request.CreateProductRequest;
-import com.glenncai.kafkaeventdrivensample.product.dto.response.BaseResponse;
 import com.glenncai.kafkaeventdrivensample.product.service.ProductService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.validation.annotation.Validated;

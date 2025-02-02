@@ -11,7 +11,9 @@
   <description>Kafka event driven sample</description>
 
   <modules>
+    <module>core</module>
     <module>product</module>
+    <module>email</module>
   </modules>
 
   <properties>

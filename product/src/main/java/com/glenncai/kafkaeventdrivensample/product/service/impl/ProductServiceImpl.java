@@ -1,12 +1,12 @@
 package com.glenncai.kafkaeventdrivensample.product.service.impl;
 
-import static com.glenncai.kafkaeventdrivensample.product.config.KafkaConfig.PRODUCT_CREATED_EVENTS_TOPIC;
+import static com.glenncai.kafkaeventdrivensample.core.constant.KafkaConstant.PRODUCT_CREATED_EVENTS_TOPIC;
 
+import com.glenncai.kafkaeventdrivensample.core.event.ProductCreatedEvent;
+import com.glenncai.kafkaeventdrivensample.core.exception.BizException;
+import com.glenncai.kafkaeventdrivensample.core.exception.StatusCode;
 import com.glenncai.kafkaeventdrivensample.product.dto.request.CreateProductRequest;
 import com.glenncai.kafkaeventdrivensample.product.entity.Product;
-import com.glenncai.kafkaeventdrivensample.product.event.ProductCreatedEvent;
-import com.glenncai.kafkaeventdrivensample.product.exception.BizException;
-import com.glenncai.kafkaeventdrivensample.product.exception.StatusCode;
 import com.glenncai.kafkaeventdrivensample.product.repository.ProductRepository;
 import com.glenncai.kafkaeventdrivensample.product.service.ProductService;
 import lombok.RequiredArgsConstructor;

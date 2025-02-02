@@ -1,6 +1,6 @@
-package com.glenncai.kafkaeventdrivensample.product.dto.response;
+package com.glenncai.kafkaeventdrivensample.core.dto.response;
 
-import com.glenncai.kafkaeventdrivensample.product.exception.StatusCode;
+import com.glenncai.kafkaeventdrivensample.core.exception.StatusCode;
 import lombok.Getter;
 import lombok.ToString;
 
